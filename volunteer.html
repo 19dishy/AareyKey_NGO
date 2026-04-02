@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Volunteer Dashboard | AAREY KEY</title>
+  <link rel="stylesheet" href="volunteer.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<div class="sidebar">
+
+  <!-- Logo / Title -->
+  <h2>
+    <a href="index.html" class="logo-link">AAREY KEY</a>
+  </h2>
+
+  <a href="#dashboard">Dashboard</a>
+  <a href="#assignments">My Assignments</a>
+  <a href="#rescues">My Rescue Cases</a>
+  <a href="#announcements">Announcements</a>
+  <a href="#profile">My Profile</a>
+  <a href="login.html">Logout</a>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="main">
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="top-bar">
+  <div>
+    <h1>Volunteer Dashboard</h1>
+    <h3 class="welcome-text">Welcome, Anita Sharma 👋</h3>
+  </div>
+  <p id="currentDate"></p>
+</div>
+
+  <!-- ===== DASHBOARD CARDS ===== -->
+  <div id="dashboard" class="cards">
+    <div class="card">
+      <h3>Assigned Tasks</h3>
+      <p>3</p>
+    </div>
+
+    <div class="card">
+      <h3>Completed Rescues</h3>
+      <p>12</p>
+    </div>
+
+    <div class="card">
+      <h3>Ongoing Cases</h3>
+      <p>2</p>
+    </div>
+  </div>
+
+<!-- ===== ONGOING EVENTS ===== -->
+<div class="events-wrapper">
+
+  <div class="section event-box">
+    <h2>Ongoing Events</h2>
+
+    <div class="event-item">
+      <span class="event-name">Wildlife Awareness Drive</span>
+      <span class="event-date">05/04/2026</span>
+    </div>
+
+    <div class="event-item">
+      <span class="event-name">Forest Clean-Up Campaign</span>
+      <span class="event-date">10/04/2026</span>
+    </div>
+  </div>
+
+  <!-- ===== PAST EVENTS ===== -->
+  <div class="section event-box">
+    <h2>Past Events</h2>
+
+    <div class="event-item">
+      <span class="event-name">Animal Rescue Workshop</span>
+      <span class="event-date">15/09/2025</span>
+    </div>
+
+    <div class="event-item">
+      <span class="event-name">Volunteer Training Session</span>
+      <span class="event-date">01/12/2025</span>
+    </div>
+  </div>
+
+</div>
+
+  <!-- ===== MY ASSIGNMENTS ===== -->
+  <div id="assignments" class="section">
+    <h2>My Assignments</h2>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Task ID</th>
+            <th>Animal</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>101</td>
+            <td>Monkey</td>
+            <td>Aarey Colony</td>
+            <td>28-03-2026</td>
+            <td>Pending</td>
+          </tr>
+
+          <tr>
+            <td>102</td>
+            <td>Leopard</td>
+            <td>Goregaon East</td>
+            <td>27-03-2026</td>
+            <td>Completed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== MY RESCUE CASES ===== -->
+  <div id="rescues" class="section">
+    <h2>My Rescue Cases</h2>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Animal</th>
+            <th>Species</th>
+            <th>Rescue Date</th>
+            <th>Current Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Case-101</td>
+            <td>Monkey</td>
+            <td>Rhesus</td>
+            <td>28-03-2026</td>
+            <td>Under Treatment</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== ANNOUNCEMENTS ===== -->
+<div id="announcements" class="section">
+  <h2>Announcements</h2>
+
+  <div id="volunteerAnnouncements"></div>
+
+</div>
+
+  <!-- ===== PROFILE ===== -->
+  <div id="profile" class="section">
+    <h2>My Profile</h2>
+
+    <p><strong>Name:</strong> Anita Sharma</p>
+    <p><strong>Email:</strong> anita@gmail.com</p>
+    <p><strong>Phone:</strong> 9876543210</p>
+    <p><strong>Role:</strong> Volunteer</p>
+  </div>
+
+</div>
+
+<script>
+
+/* ===== LOAD ANNOUNCEMENTS ===== */
+function loadAnnouncements(){
+
+  const container = document.getElementById("volunteerAnnouncements");  //  clear before load
+  container.innerHTML = "";
+
+  let announcements = JSON.parse(localStorage.getItem("announcements")) || []; // get from localStorage
+
+  announcements.forEach((a) => {
+
+    const box = document.createElement("div");
+    box.classList.add("announcement-box");
+
+    let eventHTML = "";
+    let imageHTML = "";
+    let emergencyHTML = "";
+    let rescueHTML = "";
+
+    if(a.image){
+      imageHTML = `<img src="${a.image}" class="announcement-img">`;
+    }
+
+    if(a.isEmergency){
+      emergencyHTML = `<div class="emergency-alert">🚨 Emergency Alert</div>`;
+    }
+
+    if(a.isRescue){
+      rescueHTML = `
+        <div class="rescue-details">
+          <span class="rescue-tag">Rescue Operation</span>
+          <p><strong>Location:</strong> ${a.rescueLocation}</p>
+          <p><strong>Animal:</strong> ${a.rescueAnimal}</p>
+          <p><strong>Volunteers Required:</strong> ${a.rescuePeople}</p>
+        </div>
+      `;
+    }
+
+    if(a.isEvent){
+
+      let joinedEvents = JSON.parse(localStorage.getItem("joinedEvents")) || [];
+      let joined = joinedEvents.includes(a.id);
+
+      eventHTML = `
+        <div class="announcement-footer">
+
+          <div class="event-info">
+            <span class="event-tag">EVENT</span>
+            <span class="event-date">Date: ${a.eventDate}</span>
+          </div>
+
+          <button class="join-event-btn ${joined ? 'joined' : ''}"
+            onclick="joinEvent(this, ${a.id})"
+            ${joined ? 'disabled' : ''}>
+            ${joined ? 'Joined' : 'Join Now'}
+          </button>
+
+        </div>
+      `;
+    }
+
+    box.innerHTML = `
+      ${emergencyHTML}
+      <h4>${a.title}</h4>
+      <p>${a.text}</p>
+      ${imageHTML}
+      ${rescueHTML}
+      ${eventHTML}
+    `;
+
+    container.appendChild(box);
+  });
+
+}
+
+/* ===== JOIN EVENT ===== */
+function joinEvent(btn, id){
+
+  let joinedEvents = JSON.parse(localStorage.getItem("joinedEvents")) || [];  
+
+  if(joinedEvents.includes(id)) return;  
+
+  joinedEvents.push(id);
+
+  localStorage.setItem("joinedEvents", JSON.stringify(joinedEvents));  
+
+  btn.innerHTML = "✓ Joined";
+  btn.classList.add("joined");
+  btn.disabled = true;
+}
+
+
+/* ===== REMOVE EXPIRED EVENTS ===== */
+function removeExpiredEvents() {
+
+  let announcements = JSON.parse(localStorage.getItem("announcements")) || []; // get from localStorage
+
+  const today = new Date(); // get today's date
+  today.setHours(0,0,0,0);
+
+  announcements = announcements.filter(a => {  
+
+    if (a.isEvent && a.eventDate) {
+
+      const eventDate = new Date(a.eventDate);
+      eventDate.setHours(0,0,0,0);
+
+      return eventDate >= today;
+    }
+
+    return true;
+  });
+
+  localStorage.setItem("announcements", JSON.stringify(announcements)); // save back to localStorage
+}
+
+/* ===== LOAD ===== */
+window.onload = function(){
+  removeExpiredEvents();   // auto delete expired
+  loadAnnouncements();
+};
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* Background */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  background: url('images/login.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Smaller Glass Card */
+.login-card {
+  width: 380px;              /* reduced from 380 */
+  padding: 25px;             /* reduced padding */
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+  text-align: center;
+  color: #222;
+}
+
+/* Logo circle smaller */
+.logo-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgb(12, 12, 12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-size: 18px;
+}
+
+.logo-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+/* Titles */
+.login-card h2 {
+  margin: 6px 0 3px;
+  font-size: 22px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* Social Buttons */
+.social-login {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.social-btn {
+  flex: 1;
+  padding: 6px;
+  border-radius: 8px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Divider */
+.divider {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #555;
+}
+
+/* Form */
+form {
+  text-align: left;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Inputs */
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 7px;
+  margin: 4px 0 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+/* Password wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .eye {
+  position: absolute;
+  right: 10px;
+  top: 33%;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* Options row */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.options a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Sign in button */
+.signin-btn {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.signin-btn:hover {
+  background: #222;
+}
+
+/* Signup text */
+.signup-text {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.signup-text a {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+}

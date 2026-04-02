@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Donate | AARAY KEY</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="donate.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="donate1.js" defer></script>
+
+</head>
+<body>
+
+
+<!-- ===== UTILITY BAR ===== -->
+
+<div class="utility-bar">
+  <div class="utility-left">
+    <span><i class="fa-solid fa-phone"></i> +91 09152202995</span>
+    <span>
+      <i class="fa-solid fa-envelope"></i>
+      <a href="mailto:aareykey@gmail.com">aareykey@gmail.com</a>
+    </span>
+    <span>
+      <i class="fa-brands fa-instagram"></i>
+      <a href="https://www.instagram.com/aarey_key/" target="_blank">
+      @aarey_key
+      </a>
+    </span>
+  </div>
+</div>
+
+<!-- Navbar -->
+<header class="navbar">
+
+    <div class="logo">
+    <a href="index.html">AAREY KEY</a>
+  </div>
+
+  <nav class="nav-links">
+
+    <div class="nav-item">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+      <a href="index.html#overview">Overview</a>
+      <a href="index.html#impact-highlights">Impact Highlights</a>
+      <a href="index.html#latest-updates">Latest Updates</a>
+      </div>
+    </div>
+
+   <div class="nav-item">
+  <a href="about.html">About Us</a>
+  <div class="dropdown">
+    <a href="about.html#about">About AARAY KEY</a>
+    <a href="about.html#mission">Mission & Vision</a>
+    <a href="about.html#journey">Our Journey</a>
+    <a href="about.html#governance">Governance & Ethics</a>
+  </div>
+</div>
+
+  <div class="nav-item">
+  <a href="ourwork.html">Our Work</a>
+  
+  <div class="dropdown">
+    <a href="ourwork.html#thematic">Thematic Areas</a>
+    <a href="ourwork.html#key-initiatives">Key Initiatives</a>
+    <a href="ourwork.html#community">Community-led Conservation</a>
+  </div>
+</div>
+
+  <div class="nav-item">
+  <a href="getinvolved.html">Get Involved</a>
+  <div class="dropdown">
+    <a href="getinvolved.html#support">Ways to Engage</a>
+    <a href="getinvolved.html#donate-card">Donate</a>
+    <a href="getinvolved.html#volunteer-card">Volunteer & Intern</a>
+    <a href="getinvolved.html#csr">Corporate & CSR Partnerships</a>
+  </div>
+</div>
+
+    <div class="nav-item">
+      <a href="contact.html">Contact</a>
+    </div>
+
+  </nav>
+
+  <!-- Right side buttons -->
+ <div class="nav-buttons">
+ <a href="login.html" class="btn login-btn">Login</a>
+ <a href="donate.html" class="btn donate-btn">Donate</a>
+</div>
+
+</header>
+
+</header>
+
+<!-- ===== HERO ===== -->
+
+<section class="donate-hero">
+<div class="donate-overlay">
+<h1>Give Wildlife a Second Chance</h1>
+<p>
+Your donation directly supports rescue operations,
+medical treatment, and habitat restoration.
+</p>
+</div>
+</section>
+
+
+
+<!-- ===== DONATION SECTION ===== -->
+
+<section class="donation-section">
+
+<div class="donation-container">
+
+
+<!-- LEFT SIDE IMPACT -->
+
+<div class="donation-impact">
+
+<h2>Your Impact</h2>
+
+<div class="impact-box">
+🐾 ₹500 – Emergency rescue support
+</div>
+
+<div class="impact-box">
+🩺 ₹1000 – Medical treatment for injured wildlife
+</div>
+
+<div class="impact-box">
+🌿 ₹2500 – Habitat restoration initiative
+</div>
+
+<div class="impact-box">
+🦉 ₹5000 – Sponsor full recovery & release
+</div>
+
+</div>
+
+
+
+<!-- RIGHT SIDE FORM -->
+
+<div class="donation-form">
+
+<h2>Make a Donation</h2>
+
+<form id="donationForm">
+
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+
+<div class="amount-options">
+
+<button type="button" onclick="selectAmount(500)">₹500</button>
+<button type="button" onclick="selectAmount(1000)">₹1000</button>
+<button type="button" onclick="selectAmount(2500)">₹2500</button>
+<button type="button" onclick="selectAmount(5000)">₹5000</button>
+
+</div>
+
+<input type="number" id="customAmount"
+placeholder="Custom Amount (₹)" required>
+
+
+<!-- Payment Methods -->
+
+<div class="payment-methods">
+
+<label>
+<input type="radio" name="payment" checked>
+UPI
+</label>
+
+<label>
+<input type="radio" name="payment">
+Credit/Debit Card
+</label>
+
+<label>
+<input type="radio" name="payment">
+Net Banking
+</label>
+
+</div>
+
+<button type="submit" class="pay-btn">
+Proceed to Secure Payment
+</button>
+
+</form>
+
+<p class="secure-note">
+🔒 100% Secure Payment Gateway
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===== THANK YOU MODAL ===== -->
+
+<div class="popup" id="thankYouPopup">
+<div class="popup-box">
+
+<h2>Thank You ❤️</h2>
+<p>
+Your contribution helps protect wildlife and restore ecosystems.
+</p>
+
+<button onclick="closeThankYou()">Close</button>
+
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col footer-about">
+      <h2>AAREY KEY</h2>
+      <p>For a resilient wildlife ecosystem and sustainable coexistence.</p>
+    </div>
+
+   <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">About Us</a></li>
+        <li><a href="ourwork.html">Our Work</a></li>
+        <li><a href="getinvolved.html">Get Involved</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policies</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="about.html#governance">Governance & Ethics</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>+91 09152202995</p>
+      <p>aareykey@gmail.com</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/aarey_key/?hl=en" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@aareykeyfoundation7710" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 AAREY KEY. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

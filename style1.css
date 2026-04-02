@@ -1,0 +1,748 @@
+html{
+scroll-behavior:smooth;
+}
+
+
+/* Utility Bar */
+.utility-bar {
+  background: #1f2328;
+  color: #fff;
+  padding: 8px 40px;
+  font-size: 14px;
+}
+
+.utility-left span {
+  margin-right: 20px;
+}
+
+.utility-bar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.utility-bar i {
+  margin-right: 6px;
+}
+/* Utility Bar */
+.utility-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1f2328;
+  color: #fff;
+  padding: 8px 40px;
+  font-size: 14px;
+  z-index: 1200;
+}
+
+/* Utility Bar */
+.utility-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1f2328;
+  color: #fff;
+  padding: 8px 40px;
+  font-size: 14px;
+  z-index: 1200;
+}
+
+/* Navbar */
+.navbar {
+  position: absolute;          /* makes navbar float over hero image */
+  top: 25px;                   /* below utility bar */
+  left: 0;
+  width: 100%;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(0, 0, 0, 0.25);   /* transparent glass effect */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.logo a{
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+/* Nav item */
+.nav-item {
+  position: relative;
+  padding: 10px 0;   /* IMPORTANT: creates hover bridge */
+}
+
+/* Main nav link */
+.nav-item > a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-item > a:hover {
+  color: #c8e6c9;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 20px;              /* height of utility bar */
+  left: 0;
+  width: 100%;
+
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  z-index: 1100;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 100%;               /* directly attached */
+  left: 0;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 240px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
+  transition: 0.25s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+
+  z-index: 999;
+}
+
+/* Keep dropdown visible when hovering nav-item OR dropdown */
+.nav-item:hover .dropdown,
+.dropdown:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+/* Dropdown links */
+.dropdown a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 0;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.dropdown a:hover {
+  color: #2e7d32;
+  padding-left: 4px;
+}
+
+/* Right side buttons container */
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Login button */
+.login-btn {
+  background: #000;
+  color: #fff;
+  padding: 11px 30px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;   
+}
+
+.login-btn:hover {
+  background: #222;
+}
+
+/* Donate button */
+.donate-btn {
+  background: #4CAF50;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.donate-btn:hover {
+  background: #2e7d32;
+}
+
+/* SLIDER */
+.slider{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+
+/* SLIDES CONTAINER */
+.slides{
+height:100%;
+width:100%;
+position:relative;
+}
+
+
+/* INDIVIDUAL SLIDE */
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+opacity:0;
+transition:opacity 1.2s ease;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+}
+
+
+/* ACTIVE SLIDE */
+.slide.active{
+opacity:1;
+z-index:2;
+animation:zoomEffect 6s ease forwards;
+}
+
+
+/* ZOOM PARALLAX */
+@keyframes zoomEffect{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.12);
+}
+
+}
+
+
+
+/* DARK OVERLAY */
+.overlay{
+background:rgba(0,0,0,0.35);
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+
+/* TEXT REVEAL */
+.overlay h1{
+
+color:white;
+font-size:64px;
+letter-spacing:4px;
+
+opacity:0;
+transform:translateY(40px);
+
+animation:textReveal 1.5s ease forwards;
+animation-delay:0.5s;
+
+}
+
+
+/* TEXT ANIMATION */
+@keyframes textReveal{
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+
+
+/* PROGRESS BAR */
+.progress-bar{
+
+position:absolute;
+bottom:0;
+left:0;
+
+height:4px;
+background:white;
+width:0%;
+
+animation:progressAnim 6s linear forwards;
+
+}
+
+
+/* PROGRESS ANIMATION */
+@keyframes progressAnim{
+
+from{
+width:0%;
+}
+
+to{
+width:100%;
+}
+}
+
+/* SLIDE IMAGES */
+.slide1{
+background-image:url("images/wildlife.jpeg");
+}
+
+.slide2{
+background-image:url("images/reptileslider.jpg");
+}
+
+.slide3{
+background-image:url("images/birds.jpg");
+}
+
+
+/* DOTS */
+.dots{
+position:absolute;
+bottom:30px;
+width:100%;
+text-align:center;
+}
+
+.dot{
+height:12px;
+width:12px;
+margin:5px;
+background:white;
+display:inline-block;
+border-radius:50%;
+opacity:0.5;
+cursor:pointer;
+}
+
+.dot.active{
+opacity:1;
+}
+
+/* Wildlife Rescue Section */
+
+.wildlife-rescue-section{
+padding:60px 10%;
+background:#f5f7f6;
+text-align:center;
+}
+
+.section-title{
+font-size:38px;
+margin-bottom:15px;
+color:#1f2328;
+}
+
+.section-subtitle{
+max-width:700px;
+margin:auto;
+margin-bottom:50px;
+color:#555;
+line-height:1.6;
+}
+
+/* Cards */
+
+.rescue-cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px;
+}
+
+.rescue-card{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.rescue-card:hover{
+transform:translateY(-8px);
+}
+
+.rescue-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+.rescue-card h3{
+font-size:22px;
+margin-bottom:10px;
+color:#222;
+}
+
+.rescue-card p{
+color:#555;
+font-size:15px;
+line-height:1.5;
+}
+
+/* Button */
+
+.rescue-btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 28px;
+background:#4CAF50;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.rescue-cards{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:28px;
+}
+
+}
+
+/* FOSTERING */
+
+.fostering-section{
+padding:60px 10%;
+background:#f5f7f6;
+text-align:center;
+}
+
+.foster-title{
+font-size:38px;
+margin-bottom:15px;
+color:#1f2328;
+}
+
+.foster-intro{
+max-width:700px;
+margin:auto;
+margin-bottom:50px;
+color:#555;
+line-height:1.6;
+}
+
+/* Cards */
+
+.foster-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px;
+}
+
+.foster-card{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.foster-card:hover{
+transform:translateY(-8px);
+}
+
+.foster-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+.foster-card h3{
+font-size:22px;
+margin-bottom:10px;
+color:#222;
+}
+
+.foster-card p{
+color:#555;
+font-size:15px;
+line-height:1.5;
+}
+
+.foster-btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 28px;
+background:#4CAF50;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.foster-grid{
+grid-template-columns:1fr;
+}
+
+.foster-title{
+font-size:28px;
+}
+
+}
+
+/* STATS */
+.rescue-stats{
+padding:60px 10%;
+background:#0e1f1b;
+color:white;
+text-align:center;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+margin-top:40px;
+}
+
+.stat-box h3{
+font-size:42px;
+color:#e4c98a;
+}
+
+.stat-box p{
+margin-top:8px;
+}
+
+/* ============================= */
+/* WILDLIFE EMERGENCY REPORT */
+/* ============================= */
+
+.rescue-report{
+padding:60px 10%;
+text-align:center;
+background:#f6f9f7;
+}
+
+
+/* Heading */
+
+.rescue-report h2{
+font-size:38px;
+color:#1f2328;
+margin-bottom:15px;
+font-weight:700;
+}
+
+
+/* Paragraph */
+
+.rescue-report p{
+max-width:700px;
+margin:0 auto 40px auto;
+line-height:1.6;
+font-size:16px;
+color:#555;
+}
+
+
+/* Button Container */
+
+.alert-button-container{
+text-align:center;
+margin-top:20px;
+}
+
+
+/* Alert Button */
+
+.alert-button{
+display:inline-block;
+
+padding:16px 36px;
+
+background:#e53935;
+color:#fff;
+
+font-size:18px;
+font-weight:600;
+
+border-radius:10px;
+
+text-decoration:none;
+
+transition:all 0.3s ease;
+
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+
+
+/* Hover Effect */
+
+.alert-button:hover{
+background:#c62828;
+transform:translateY(-3px);
+box-shadow:0 12px 24px rgba(0,0,0,0.25);
+}
+
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+.rescue-report{
+padding:70px 8%;
+}
+
+.rescue-report h2{
+font-size:28px;
+}
+
+.rescue-report p{
+font-size:15px;
+}
+
+.alert-button{
+padding:14px 28px;
+font-size:16px;
+}
+
+}
+
+/* Footer */
+.footer {
+  background: #0e1f1b;
+  color: #d6e3dc;
+  padding: 60px 40px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-col h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.footer-col h3 {
+  color: #e4c98a;
+  margin-bottom: 18px;
+}
+
+.footer-col p {
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #d6e3dc;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+}
+
+.footer-socials {
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  display: inline-block;
+  margin-right: 12px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
