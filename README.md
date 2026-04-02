@@ -52,10 +52,8 @@ This platform solves these issues by digitizing the entire workflow into a **rea
 
 ## 📸 Glance of Website
 
-### 🏠 Home Page
-<img width="1600" alt="Homepage" src="https://github.com/user-attachments/assets/bee7aba8-90ab-4c93-b595-133258c69bbb" />
-
 ### 🌿 NGO Admin Dashboard
+<img width="1600" alt="Homepage" src="https://github.com/user-attachments/assets/bee7aba8-90ab-4c93-b595-133258c69bbb" />
 <img width="1600" alt="Dashboard" src="https://github.com/user-attachments/assets/6f10ab6d-b52e-4b46-a817-a99cb4ac0e13" />
 
 ### 🚨 Rescue/Volunteer Management
